@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amir | Téléphones &amp; Accessoires en Algérie</title>
+    <meta name="description" content="Amir - votre boutique de téléphones portables et accessoires en Algérie. Livraison 48h dans les 58 wilayas, paiement à la livraison.">
+    <!-- Balises Open Graph pour les aperçus Facebook/WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Amir | Téléphones & Accessoires en Algérie">
+    <meta property="og:description" content="Smartphones, écouteurs, chargeurs, coques et accessoires. Livraison 48h dans les 58 wilayas. Paiement à la livraison.">
+    <meta property="og:url" content="https://hassanhamana-sys.github.io/amir/">
+    <!-- À GARDER : téléverser aussi l'image couverture facebook.png à la racine du dossier amir -->
+    <meta property="og:image" content="https://hassanhamana-sys.github.io/amir/couverture%20facebook.png">
+    <meta property="og:image:alt" content="Amir - Téléphones et Accessoires en Algérie">
+    <meta property="og:locale" content="fr_DZ">
+    <!-- À REMPLACER : numéro WhatsApp international (213 sans le 0 du début) -->
+    <meta property="og:site_name" content="Amir">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            color: #1a1a2e;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        /* --- HEADER --- */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #1a1a2e;
+            color: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            color: #fff;
+        }
+        .logo i {
+            color: #f39c12;
+        }
+        .logo span {
+            color: #e67e22;
+        }
+        .logo small {
+            display: block;
+            font-size: 12px;
+            font-weight: normal;
+            color: #aaa;
+            letter-spacing: 0;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #f39c12;
+        }
+        .nav-phone {
+            color: #fff;
+            background: #e67e22;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        .nav-phone:hover {
+            background: #d35400;
+        }
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* --- HERO --- */
+        .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+        }
+        .hero .container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .hero-content {
+            flex: 1;
+            min-width: 300px;
+        }
+        .hero-content h1 {
+            color: #fff;
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+        .hero-content h1 span {
+            color: #f39c12;
+        }
+        .hero-content p {
+            color: #ccc;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+        .hero-badges {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+        .hero-badge {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            padding: 8px 14px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: #eee;
+        }
+        .hero-badge i {
+            color: #f39c12;
+            margin-right: 6px;
+        }
+        .cta-btn {
+            display: inline-block;
+            background: #e67e22;
+            color: #fff;
+            padding: 14px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.05rem;
+            font-weight: bold;
+            margin-right: 12px;
+            transition: background 0.3s, transform 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        .cta-btn:hover {
+            background: #d35400;
+            transform: scale(1.02);
+        }
+        .cta-outline {
+            background: transparent;
+            border: 2px solid #f39c12;
+            color: #f39c12;
+        }
+        .cta-outline:hover {
+            background: rgba(243,156,18,0.1);
+            color: #f39c12;
+        }
+        .hero-visual {
+            flex: 1;
+            min-width: 280px;
+            text-align: center;
+        }
+        .hero-visual .circle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #e67e22, #1a1a2e 70%);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+        }
+        .hero-visual .circle i {
+            font-size: 8rem;
+            color: #fff;
+            text-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        /* --- AVANTAGES --- */
+        .benefits {
+            background: #fff;
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+        .benefit-item {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .benefit-item:hover {
+            transform: translateY(-5px);
+        }
+        .benefit-item i {
+            font-size: 2.2rem;
+            color: #e67e22;
+            margin-bottom: 12px;
+        }
+        .benefit-item h3 {
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        .benefit-item p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* --- CATEGORIES --- */
+        .categories {
+            background: #f4f6f8;
+        }
+        .cat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+        .cat-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .cat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .cat-card i {
+            font-size: 2.6rem;
+            color: #e67e22;
+            margin-bottom: 15px;
+        }
+        .cat-card h3 {
+            margin-bottom: 5px;
+            font-size: 1.05rem;
+        }
+        .cat-card p {
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        /* --- PRODUITS --- */
+        .products {
+            background: #fff;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+        .product-card {
+            background: #f8f9fa;
+            border-radius: 14px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .product-img {
+            height: 190px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            border-bottom: 1px solid #eee;
+            overflow: hidden;
+        }
+        .product-img img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+        .product-img i {
+            font-size: 4.5rem;
+            color: #cbd5e0;
+        }
+        .product-info {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .product-info h3 {
+            font-size: 1.05rem;
+            margin-bottom: 5px;
+        }
+        .product-info p {
+            color: #666;
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+            flex: 1;
+        }
+        .product-price {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #e67e22;
+            margin-bottom: 12px;
+        }
+        .product-link {
+            display: block;
+            background: #1a1a2e;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+        .product-link:hover {
+            background: #e67e22;
+        }
+        .badge-stock {
+            display: inline-block;
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffc107;
+            padding: 3px 12px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .badge-soon {
+            display: inline-block;
+            background: #e2e8f0;
+            color: #475569;
+            padding: 3px 12px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        /* --- AUSSI DISPONIBLE (Arduino) --- */
+        .arduino {
+            background: #16213e;
+        }
+        .arduino .section-title {
+            color: #fff;
+        }
+        .arduino .section-subtitle {
+            color: #aaa;
+        }
+        .mini-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .mini-card {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            color: #fff;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s;
+            display: block;
+        }
+        .mini-card:hover {
+            background: rgba(255,255,255,0.12);
+            transform: translateY(-5px);
+        }
+        .mini-card i {
+            font-size: 2.2rem;
+            color: #f39c12;
+            margin-bottom: 12px;
+        }
+        .mini-card h3 {
+            color: #fff;
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+        .mini-card .price {
+            color: #f39c12;
+            font-weight: bold;
+        }
+
+        /* --- COMMENT COMMANDER --- */
+        .how-to {
+            background: #f4f6f8;
+        }
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+        .step {
+            background: #fff;
+            border-radius: 14px;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .step-num {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 50%;
+            background: #e67e22;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin: 0 auto 15px;
+        }
+        .step i {
+            font-size: 2rem;
+            color: #e67e22;
+            margin-bottom: 12px;
+            display: block;
+        }
+        .step h3 {
+            margin-bottom: 5px;
+            font-size: 1.05rem;
+        }
+        .step p {
+            color: #666;
+            font-size: 0.88rem;
+        }
+
+        /* --- CTA WHATSAPP --- */
+        .cta-banner {
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            text-align: center;
+            color: #fff;
+        }
+        .cta-banner h2 {
+            color: #fff;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        .cta-banner p {
+            color: #eafff5;
+            margin-bottom: 25px;
+        }
+        .btn-whatsapp {
+            display: inline-block;
+            background: #fff;
+            color: #128c7e;
+            padding: 14px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.2s;
+        }
+        .btn-whatsapp:hover {
+            transform: scale(1.03);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #1a1a2e;
+            color: #aaa;
+            text-align: center;
+            padding: 25px 0;
+            font-size: 0.9rem;
+        }
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+        footer .socials {
+            margin-bottom: 10px;
+        }
+        footer .socials a {
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 1.3rem;
+            color: #ccc;
+            transition: color 0.3s;
+        }
+        footer .socials a:hover {
+            color: #f39c12;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            nav {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                padding: 10px 0;
+                gap: 10px;
+            }
+            nav.open {
+                display: flex;
+            }
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .hero-visual .circle {
+                width: 220px;
+                height: 220px;
+            }
+            .hero-visual .circle i {
+                font-size: 5rem;
+            }
+            section {
+                padding: 45px 0;
+            }
+            .section-title {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-mobile-screen"></i> Amir<span>Phone</span>
+                <small>Téléphones &amp; Accessoires</small>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+            <nav id="nav">
+                <a href="#accueil">Accueil</a>
+                <a href="#produits">Produits</a>
+                <a href="#categories">Catégories</a>
+                <a href="#commander">Commander</a>
+                <a href="#contact">Contact</a>
+                <a class="nav-phone" href="tel:0600000000"><i class="fas fa-phone-alt"></i> 06 00 00 00 00</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section Accueil -->
+        <section class="hero" id="accueil">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Téléphones &amp; Accessoires avec <span>Amir</span></h1>
+                    <p>Smartphones, écouteurs, chargeurs, coques et adaptateurs de qualité. Commandez en 2 minutes, recevez chez vous sous 48h et payez à la livraison.</p>
+                    <div class="hero-badges">
+                        <span class="hero-badge"><i class="fas fa-truck"></i> Livraison 48h - 58 wilayas</span>
+                        <span class="hero-badge"><i class="fas fa-hand-holding-usd"></i> Paiement à la livraison</span>
+                        <span class="hero-badge"><i class="fas fa-shield-alt"></i> Produits garantis</span>
+                    </div>
+                    <a href="#produits" class="cta-btn">Voir les produits</a>
+                    <a href="#commander" class="cta-btn cta-outline">Comment commander ?</a>
+                </div>
+                <div class="hero-visual">
+                    <div class="circle">
+                        <i class="fas fa-mobile-screen"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Avantages -->
+        <section class="benefits">
+            <div class="container">
+                <h2 class="section-title">Pourquoi acheter chez Amir ?</h2>
+                <p class="section-subtitle">Une boutique simple, rapide et fiable</p>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <i class="fas fa-hand-holding-usd"></i>
+                        <h3>Paiement à la livraison</h3>
+                        <p>Payez en espèces à la réception de votre colis. Aucun paiement à l'avance.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-truck-fast"></i>
+                        <h3>Livraison 48h</h3>
+                        <p>Expédition rapide dans les 58 wilayas via les meilleures agences de livraison.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Qualité garantie</h3>
+                        <p>Produits testés et vérifiés avant expédition. Satisfaction garantie.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-headset"></i>
+                        <h3>Support 7j/7</h3>
+                        <p>Une équipe disponible sur WhatsApp pour vous accompagner avant et après la commande.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Produits -->
+        <section class="products" id="produits">
+            <div class="container">
+                <h2 class="section-title">Nos produits vedettes</h2>
+                <p class="section-subtitle">Tous les produits sont livrés dans les 58 wilayas</p>
+                <div class="product-grid">
+
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="Adaptateur%20Casque%20Type-C.png" alt="Adaptateur casque Type-C vers Jack 3.5 mm">
+                        </div>
+                        <div class="product-info">
+                            <span class="badge-stock"><i class="fas fa-exclamation-circle"></i> Quantité limitée : 8 pièces</span>
+                            <h3>Adaptateur Type-C → Jack 3.5mm</h3>
+                            <p>Audio numérique en forme de L, compatible Huawei, Xiaomi, Samsung.</p>
+                            <div class="product-price">800 DA</div>
+                            <a class="product-link" href="fiche-produit-adaptateur-type-c.html">Commander</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-img">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <div class="product-info">
+                            <span class="badge-soon">Bientôt disponible</span>
+                            <h3>Écouteurs sans fil</h3>
+                            <p>Bluetooth, qualité sonore premium, autonomie longue durée.</p>
+                            <div class="product-price">--</div>
+                            <!-- À REMPLACER : lien WhatsApp avec ton numéro -->
+                            <a class="product-link" href="https://wa.me/213000000000">Me prévenir</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-img">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="product-info">
+                            <span class="badge-soon">Bientôt disponible</span>
+                            <h3>Chargeurs rapides</h3>
+                            <p>Câbles et chargeurs rapides USB-C, Micro-USB et Lightning.</p>
+                            <div class="product-price">--</div>
+                            <a class="product-link" href="https://wa.me/213000000000">Me prévenir</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-img">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="product-info">
+                            <span class="badge-soon">Bientôt disponible</span>
+                            <h3>Coques &amp; Protection</h3>
+                            <p>Coques, verres trempés et protections pour tous les modèles.</p>
+                            <div class="product-price">--</div>
+                            <a class="product-link" href="https://wa.me/213000000000">Me prévenir</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Catégories -->
+        <section class="categories" id="categories">
+            <div class="container">
+                <h2 class="section-title">Nos catégories</h2>
+                <p class="section-subtitle">Tout pour votre téléphone, en un seul endroit</p>
+                <div class="cat-grid">
+                    <a class="cat-card" href="#produits">
+                        <i class="fas fa-mobile-screen"></i>
+                        <h3>Smartphones</h3>
+                        <p>Les meilleurs modèles aux meilleurs prix</p>
+                    </a>
+                    <a class="cat-card" href="#produits">
+                        <i class="fas fa-headphones"></i>
+                        <h3>Écouteurs &amp; Casques</h3>
+                        <p>Audio filaire et sans fil</p>
+                    </a>
+                    <a class="cat-card" href="#produits">
+                        <i class="fas fa-bolt"></i>
+                        <h3>Chargeurs &amp; Câbles</h3>
+                        <p>Rapides, durables et compatibles</p>
+                    </a>
+                    <a class="cat-card" href="#produits">
+                        <i class="fas fa-shield-halved"></i>
+                        <h3>Coques &amp; Protection</h3>
+                        <p>Protégez votre téléphone au quotidien</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Électronique (Arduino) -->
+        <section class="arduino">
+            <div class="container">
+                <h2 class="section-title">Aussi disponible : cartes Arduino</h2>
+                <p class="section-subtitle">Pour vos projets scolaires, universitaires et de robotique</p>
+                <div class="mini-grid">
+                    <a class="mini-card" href="fiche-produit-arduino-nano.html">
+                        <i class="fas fa-microchip"></i>
+                        <h3>Arduino Nano</h3>
+                        <p class="price">1 200 DA</p>
+                    </a>
+                    <a class="mini-card" href="fiche-produit-arduino-uno.html">
+                        <i class="fas fa-microchip"></i>
+                        <h3>Arduino Uno</h3>
+                        <p class="price">1 600 DA</p>
+                    </a>
+                    <a class="mini-card" href="fiche-produit-arduino-mega.html">
+                        <i class="fas fa-microchip"></i>
+                        <h3>Arduino Mega</h3>
+                        <p class="price">2 400 DA</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Comment commander -->
+        <section class="how-to" id="commander">
+            <div class="container">
+                <h2 class="section-title">Comment commander ?</h2>
+                <p class="section-subtitle">4 étapes simples, sans avance d'argent</p>
+                <div class="steps">
+                    <div class="step">
+                        <span class="step-num">1</span>
+                        <i class="fas fa-cart-plus"></i>
+                        <h3>Choisissez</h3>
+                        <p>Parcourez nos produits et sélectionnez celui qui vous convient.</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-num">2</span>
+                        <i class="fas fa-comment-dots"></i>
+                        <h3>Commandez</h3>
+                        <p>Remplissez le formulaire de commande ou contactez-nous sur WhatsApp.</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-num">3</span>
+                        <i class="fas fa-truck-fast"></i>
+                        <h3>Recevez</h3>
+                        <p>Votre colis arrive chez vous sous 48h, dans les 58 wilayas.</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-num">4</span>
+                        <i class="fas fa-hand-holding-usd"></i>
+                        <h3>Payez à la livraison</h3>
+                        <p>Payez uniquement à la réception de votre colis. Simple et sûr.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section CTA WhatsApp -->
+        <section class="cta-banner" id="contact">
+            <div class="container">
+                <h2>Une question ? Une commande spéciale ?</h2>
+                <p>Contactez-nous directement sur WhatsApp, nous répondons rapidement.</p>
+                <!-- À REMPLACER : le numéro international 213 + numéro sans le 0 -->
+                <a class="btn-whatsapp" href="https://wa.me/213000000000"><i class="fab fa-whatsapp"></i> Commander sur WhatsApp</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="socials">
+                <!-- À REMPLACER : liens réels de ta page Facebook -->
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>AmirPhone - Téléphones &amp; Accessoires | Tél : 06 00 00 00 00</p>
+            <p>&copy; 2026 Amir - Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <script>
+        // Menu mobile
+        document.getElementById('menuToggle').addEventListener('click', function () {
+            document.getElementById('nav').classList.toggle('open');
+        });
+    </script>
+
+</body>
+</html>
